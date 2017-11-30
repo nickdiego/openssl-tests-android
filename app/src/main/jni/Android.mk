@@ -1,17 +1,17 @@
 LOCAL_PATH := $(call my-dir)
 
-OPENSSL_DIR := $(LOCAL_PATH)/openssl
+OPENSSL_DIR := $(LOCAL_PATH)/../prebuilt/openssl/$(TARGET_ARCH_ABI)
 
 # Declaring prebuilt libssl.a
 include $(CLEAR_VARS)
 LOCAL_MODULE := libssl
-LOCAL_SRC_FILES := $(OPENSSL_DIR)/lib/$(TARGET_ARCH_ABI)/libssl.a
+LOCAL_SRC_FILES := $(OPENSSL_DIR)/lib/libssl.a
 include $(PREBUILT_STATIC_LIBRARY)
 
 # Declaring prebuilt libssl.a
 include $(CLEAR_VARS)
 LOCAL_MODULE := libcrypto
-LOCAL_SRC_FILES := $(OPENSSL_DIR)/lib/$(TARGET_ARCH_ABI)/libcrypto.a
+LOCAL_SRC_FILES := $(OPENSSL_DIR)/lib/libcrypto.a
 include $(PREBUILT_STATIC_LIBRARY)
 
 # libnative-lib.so
